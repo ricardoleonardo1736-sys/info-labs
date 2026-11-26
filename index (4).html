@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>INFO LABS LLC</title>
+<meta name="description" content="INFO LABS LLC — marketing digital, tecnologia, comércio eletrónico e desenvolvimento de negócios online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  color-scheme: dark;
+  --page: #0c101c;
+  --panel: #151c30;
+  --ink: #f4f6ff;
+  --ink-soft: #b9c3dc;
+  --blaze: #a8c3ff;
+  --line: #303d5c;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 95px; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.6 Georgia, serif; }
+h1, h2, h3, nav, .brand, .btn, form, .mono, .markets, footer, .svc ul { font-family: "Instrument Sans", system-ui, sans-serif; }
+h1, h2, h3, p, blockquote { margin: 0 0 1rem; }
+h1, h2, h3 { line-height: 1.08; letter-spacing: -.035em; }
+h1 { font-size: clamp(3.1rem, 7vw, 6.3rem); }
+h2 { font-size: clamp(2.1rem, 4.8vw, 3.65rem); }
+h3 { font-size: 1.45rem; }
+p { color: var(--ink-soft); }
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--blaze); }
+:focus-visible { outline: 2px solid var(--blaze); outline-offset: 4px; }
+.wrap { width: min(1140px, calc(100% - 40px)); margin-inline: auto; }
+.top { position: sticky; top: 0; z-index: 1; background: #0c101cf5; border-bottom: 1px solid var(--line); }
+.top .wrap, .links, .actions { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.top .wrap { min-height: 76px; justify-content: space-between; padding-block: 12px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .07em; }
+.brand-symbol { background: var(--blaze); color: var(--page); border-radius: 6px; padding: 1px 7px; }
+.links { font-size: .9rem; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 11px 19px; border: 1px solid transparent; border-radius: 8px; background: var(--blaze); color: var(--page); font-weight: 750; cursor: pointer; }
+.btn:hover { background: #d5e2ff; color: var(--page); }
+.ghost { background: transparent; border-color: var(--line); color: var(--ink); }
+.hero { background: radial-gradient(ellipse at 80% 48%, #27396a, transparent 58%); border-bottom: 1px solid var(--line); }
+.hero .wrap { min-height: 620px; padding-block: 78px; display: grid; grid-template-columns: 1.4fr 1fr; align-items: center; gap: 38px; }
+.hero em { color: var(--blaze); font-style: normal; }
+.coords { margin-bottom: 22px; }
+.lede { max-width: 55ch; font-size: 1.15rem; }
+.actions { margin-top: 28px; }
+.hero-art { aspect-ratio: 1; display: grid; place-items: center; position: relative; isolation: isolate; overflow: hidden; border: 1px solid #7f99d36b; border-radius: 26px; background: repeating-linear-gradient(0deg,#a8c3ff18 0 1px,transparent 1px 28px), repeating-linear-gradient(90deg,#a8c3ff18 0 1px,transparent 1px 28px), #16213d; }
+.hero-art::before, .hero-art::after { content: ""; position: absolute; z-index: -1; width: 58%; aspect-ratio: 1; border: 1px solid #a8c3ff9c; border-radius: 22%; transform: rotate(45deg); box-shadow: 0 0 45px #718fff75, inset 0 0 35px #718fff50; }
+.hero-art::after { width: 42%; }
+.hero-art span { color: #d6e3ff; font: 800 clamp(2.5rem, 7vw, 6rem)/1 system-ui; letter-spacing: -.12em; }
+.block { padding-block: 86px; }
+.mono { font-size: .8rem; font-weight: 650; letter-spacing: .09em; text-transform: uppercase; color: var(--blaze); }
+.sec-head { max-width: 670px; margin-bottom: 30px; }
+.sec-head .mono { margin-bottom: 12px; }
+.about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 16px 48px; }
+.about-grid > :last-child { grid-column: 2; }
+.big { color: var(--ink); font-size: clamp(1.45rem, 3vw, 2.1rem); line-height: 1.3; }
+.services, .route-steps { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 15px; }
+.svc, .route-steps > li, .card { background: var(--panel); border: 1px solid var(--line); border-radius: 15px; padding: 26px; }
+.svc svg { width: 38px; height: 38px; stroke: var(--blaze); fill: none; stroke-width: 1.55; margin-bottom: 16px; }
+.svc svg .fillb { fill: var(--blaze); }
+.svc ul, .markets ul { margin: 0; padding: 0; list-style: none; display: flex; gap: 7px; flex-wrap: wrap; }
+.svc li { border: 1px solid var(--line); border-radius: 5px; padding: 3px 8px; color: var(--blaze); font-size: .77rem; }
+#metodo { border-top: 1px solid var(--line); }
+.route-steps { padding: 0; margin: 0; list-style: none; }
+.route-steps .km { margin-bottom: 12px; }
+.markets { border-block: 1px solid var(--line); background: var(--panel); }
+.markets .wrap { padding-block: 24px; display: flex; gap: 12px 34px; flex-wrap: wrap; align-items: center; }
+.markets ul { column-gap: 20px; }
+.mission, .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
+.mission { background: #192743; padding: clamp(22px, 5vw, 55px); border-radius: 20px; }
+blockquote { font-size: clamp(1.75rem, 3.2vw, 2.8rem); line-height: 1.2; }
+mark { background: transparent; color: var(--blaze); }
+.values > div { padding: 15px 0 0; border-top: 1px solid var(--line); }
+.steps > div { display: flex; gap: 12px; align-items: baseline; padding: 8px 0; }
+.card { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+.field { display: grid; gap: 6px; }
+.full, .foot { grid-column: 1 / -1; }
+input, select, textarea { width: 100%; border: 1px solid var(--line); border-radius: 7px; background: var(--page); color: var(--ink); padding: 10px; font: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+.status { display: block; margin-top: 8px; color: var(--ink-soft); }
+footer { border-top: 1px solid var(--line); background: #101626; }
+footer .wrap { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px; padding-block: 35px; }
+.col { display: grid; align-content: start; gap: 8px; }
+.legal { grid-column: 1 / -1; display: flex; gap: 10px 24px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 13px; font-size: .85rem; }
+@media (max-width: 840px) {
+  .hero .wrap { grid-template-columns: 1fr; min-height: initial; padding-block: 52px; }
+  .hero-art { max-height: 310px; aspect-ratio: 1.6; }
+  .services { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 620px) {
+  html { scroll-padding-top: 18px; }
+  .top { position: static; }
+  .top .wrap, .links { gap: 10px 14px; }
+  .block { padding-block: 52px; }
+  .about-grid, .services, .route-steps, .mission, .contact, .card, footer .wrap { grid-template-columns: 1fr; }
+  .about-grid > :last-child { grid-column: auto; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="INFO LABS LLC, início">
+      <span class="brand-symbol" aria-hidden="true">IL</span>
+      INFO LABS LLC
+    </a>
+    <nav class="links" aria-label="Principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#metodo">Método</a>
+      <a href="#missao">Missão</a>
+      <a class="btn" href="#contacto">Fale connosco</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+      <div class="coords mono">Soluções e Negócios Digitais</div>
+      <h1>Transformamos ideias em <em>resultados</em>.</h1>
+      <p class="lede">Marketing digital, tecnologia, comércio eletrónico e desenvolvimento de negócios online. Criamos, desenvolvemos e expandimos projetos digitais para clientes em diferentes mercados internacionais.</p>
+      <div class="actions">
+        <a class="btn" href="#contacto">Iniciar um projeto
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn ghost" href="#servicos">Ver serviços</a>
+      </div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><span>IL</span></div>
+    </div>
+  </section>
+
+  <section class="block" id="sobre">
+    <div class="wrap about-grid">
+      <div class="mono spacer" style="color:var(--ink-soft);padding-top:8px"><b style="color:var(--ink);font-weight:500">Sobre</b> / Quem somos</div>
+      <div>
+        <p class="big">A <strong>INFO LABS LLC</strong> é uma empresa especializada em marketing digital, tecnologia, comércio eletrónico e desenvolvimento de negócios online.</p>
+      </div>
+      <div style="color:var(--ink-soft)">
+        <p>Atuamos na criação, desenvolvimento e expansão de projetos digitais. Usamos marketing de resposta direta (<em>Direct Response Marketing</em>), publicidade online, automação e análise de dados para transformar oportunidades em negócios lucrativos e escaláveis.</p>
+        <p>Com uma visão orientada para o crescimento, apostamos na inovação contínua, na eficiência operacional e na construção de negócios digitais sustentáveis.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="servicos">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="mono"><b>Serviços</b> / O que fazemos</div>
+        <h2>Tudo o que um negócio digital precisa para crescer.</h2>
+        <p class="intro">Da estratégia à execução. Cada área trabalha em conjunto para que cada euro investido seja medido e otimizado.</p>
+      </div>
+      <div class="services">
+        <article class="svc">
+          <svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13"/><circle cx="17" cy="17" r="7"/><circle class="fillb" cx="17" cy="17" r="3"/></svg>
+          <h3>Marketing de Resposta Direta</h3>
+          <p>Campanhas desenhadas para gerar uma ação concreta: um contacto, um registo, uma venda. Mensagem, oferta e funil pensados em conjunto.</p>
+          <ul><li>Copywriting</li><li>Funis de venda</li><li>Ofertas</li></ul>
+        </article>
+        <article class="svc">
+          <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M5 22V12l18-6v22L5 22z"/><path d="M10 23l2 7h4l-2-6"/><rect class="fillb" x="25" y="13" width="5" height="8" rx="1"/></svg>
+          <h3>Publicidade Online</h3>
+          <p>Gestão de campanhas pagas nas principais plataformas, com segmentação precisa e otimização contínua do retorno.</p>
+          <ul><li>Meta Ads</li><li>Google Ads</li><li>TikTok Ads</li></ul>
+        </article>
+        <article class="svc">
+          <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M4 6h4l3 16h15l3-11H10"/><circle cx="13" cy="27" r="2"/><circle cx="24" cy="27" r="2"/><rect class="fillb" x="15" y="13" width="9" height="5" rx="1"/></svg>
+          <h3>Comércio Eletrónico</h3>
+          <p>Criação e escala de lojas online: produto, plataforma, checkout e logística alinhados para vender em vários mercados.</p>
+          <ul><li>Lojas online</li><li>Conversão</li><li>Internacionalização</li></ul>
+        </article>
+        <article class="svc">
+          <svg viewBox="0 0 34 34" aria-hidden="true"><rect x="4" y="6" width="26" height="18" rx="2"/><path d="M12 30h10M17 24v6"/><path d="M11 12l-3 3 3 3M23 12l3 3-3 3"/><rect class="fillb" x="15" y="11" width="4" height="8" rx="1"/></svg>
+          <h3>Tecnologia e Desenvolvimento</h3>
+          <p>Sites, landing pages e plataformas rápidas e fiáveis, construídos para converter e para crescer com o negócio.</p>
+          <ul><li>Websites</li><li>Landing pages</li><li>Integrações</li></ul>
+        </article>
+        <article class="svc">
+          <svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="5"/><path d="M17 3v5M17 26v5M3 17h5M26 17h5M7 7l3.5 3.5M23.5 23.5L27 27M27 7l-3.5 3.5M10.5 23.5L7 27"/><circle class="fillb" cx="17" cy="17" r="2.5"/></svg>
+          <h3>Automação</h3>
+          <p>Processos de marketing e vendas que funcionam sozinhos: e-mail, CRM, follow-ups e fluxos que poupam tempo e custos.</p>
+          <ul><li>E-mail marketing</li><li>CRM</li><li>Fluxos</li></ul>
+        </article>
+        <article class="svc">
+          <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M4 30h26"/><rect x="7" y="18" width="5" height="9"/><rect x="15" y="12" width="5" height="15"/><rect class="fillb" x="23" y="5" width="5" height="22"/></svg>
+          <h3>Análise de Dados</h3>
+          <p>Decisões baseadas em números. Medimos cada etapa do funil, identificamos o que funciona e investimos onde há retorno.</p>
+          <ul><li>Tracking</li><li>Dashboards</li><li>ROI</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block band" id="metodo">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="mono"><b>Método</b> / Como trabalhamos</div>
+        <h2>Um caminho claro, do ponto de partida ao resultado.</h2>
+        <p class="intro">Cada projeto segue um processo claro. Sabemos onde estamos, para onde vamos e como medimos o progresso.</p>
+      </div>
+      <ol class="route-steps">
+        <li>
+          <div class="pin" aria-hidden="true"></div>
+          <div class="km mono">Etapa 1 · Ideia</div>
+          <h3>Ideias</h3>
+          <p>Analisamos o mercado, o público e a concorrência. Validamos a ideia e definimos a estratégia antes de investir.</p>
+        </li>
+        <li>
+          <div class="pin" aria-hidden="true"></div>
+          <div class="km mono">Etapa 2 · Lançamento</div>
+          <h3>Oportunidades</h3>
+          <p>Construímos a oferta, a tecnologia e as campanhas. Lançamos, testamos e otimizamos com base em dados reais.</p>
+        </li>
+        <li>
+          <div class="pin" aria-hidden="true"></div>
+          <div class="km mono">Etapa 3 · Escala</div>
+          <h3>Resultados</h3>
+          <p>Escalamos o que funciona, automatizamos processos e expandimos para novos mercados de forma sustentável.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="markets" aria-label="Mercados">
+    <div class="wrap">
+      <span class="mono">Alcance internacional</span>
+      <ul>
+        <li>Estados Unidos</li>
+        <li>Europa</li>
+        <li>Brasil</li>
+        <li>América Latina</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="missao">
+    <div class="wrap">
+      <div class="mission">
+        <div>
+          <div class="mono" style="color:var(--ink-soft);margin-bottom:22px"><b style="color:var(--ink);font-weight:500">Missão</b> / Porque existimos</div>
+          <blockquote>Conectar inovação, tecnologia e estratégia para gerar <mark>resultados reais</mark>.</blockquote>
+          <p class="cap">Desenvolvemos soluções digitais capazes de alcançar clientes em diferentes mercados internacionais.</p>
+        </div>
+        <div class="values">
+          <div><span class="mk" aria-hidden="true"></span><h3>Inovação contínua</h3><p>Testamos novas plataformas, formatos e ferramentas antes de se tornarem norma.</p></div>
+          <div><span class="mk" aria-hidden="true"></span><h3>Eficiência operacional</h3><p>Processos enxutos e automatizados, para que o investimento vá para o que gera retorno.</p></div>
+          <div><span class="mk" aria-hidden="true"></span><h3>Crescimento sustentável</h3><p>Negócios construídos para durar, com margens saudáveis e decisões baseadas em dados.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contacto">
+    <div class="wrap contact">
+      <div class="side">
+        <div class="mono" style="color:var(--ink-soft);margin-bottom:22px"><b style="color:var(--ink);font-weight:500">Contacto</b> / Próximo passo</div>
+        <h2>Vamos falar sobre o seu projeto.</h2>
+        <p>Conte-nos sobre o seu projeto ou ideia. Respondemos com uma primeira análise e os próximos passos recomendados.</p>
+        <div class="steps">
+          <div><span class="mono">01</span><span>Envie a mensagem</span></div>
+          <div><span class="mono">02</span><span>Conversa de diagnóstico</span></div>
+          <div><span class="mono">03</span><span>Proposta com plano e metas</span></div>
+        </div>
+      </div>
+      <!-- Para receber mensagens: defina o atributo data-endpoint com o URL de um serviço de formulários (ex.: Formspree). -->
+      <form class="card" id="contact-form" data-endpoint="" novalidate>
+        <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" autocomplete="name" required></div>
+        <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field full"><label for="f-servico">Área de interesse</label>
+          <select id="f-servico" name="servico">
+            <option>Marketing de resposta direta</option>
+            <option>Publicidade online</option>
+            <option>Comércio eletrónico</option>
+            <option>Tecnologia e desenvolvimento</option>
+            <option>Automação</option>
+            <option>Análise de dados</option>
+            <option>Outro / ainda não sei</option>
+          </select>
+        </div>
+        <div class="field full"><label for="f-msg">Mensagem</label><textarea id="f-msg" name="mensagem" placeholder="Descreva o seu projeto, objetivos e prazos." required></textarea></div>
+        <div class="foot">
+          <button class="btn" type="submit">Enviar mensagem</button>
+          <span class="status" id="f-status" role="status"></span>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="col">
+      <a class="brand" href="#inicio">INFO LABS LLC</a>
+      <p>Transformamos ideias em oportunidades e oportunidades em resultados.</p>
+    </div>
+    <div class="col">
+      <span class="mono">Empresa</span>
+      <a href="#sobre">Sobre</a>
+      <a href="#metodo">Método</a>
+      <a href="#missao">Missão</a>
+    </div>
+    <div class="col">
+      <span class="mono">Serviços</span>
+      <a href="#servicos">Marketing digital</a>
+      <a href="#servicos">Comércio eletrónico</a>
+      <a href="#servicos">Tecnologia e automação</a>
+    </div>
+    <div class="legal">
+      <p>© <span id="yr">2026</span> INFO LABS LLC. Todos os direitos reservados.</p>
+      <p>Soluções e Negócios Digitais</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Contact form
+  var form = document.getElementById('contact-form');
+  var status = document.getElementById('f-status');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) { status.textContent = 'Preencha nome, e-mail válido e mensagem.'; return; }
+    var endpoint = form.getAttribute('data-endpoint');
+    if (!endpoint) { status.textContent = 'O envio do formulário ainda não está configurado.'; return; }
+    status.textContent = 'A enviar…';
+    fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+      .then(function (r) {
+        if (!r.ok) throw new Error();
+        form.reset(); status.textContent = 'Mensagem enviada. Entraremos em contacto em breve.';
+      })
+      .catch(function () { status.textContent = 'Não foi possível enviar. Tente novamente dentro de momentos.'; });
+  });
+})();
+</script>
+
+</body></html>
